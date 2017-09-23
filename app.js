@@ -8,7 +8,7 @@ io.on('connection', function (client) {
   console.log("Socket connected");
 })
 
-http.listen(3000, function () {
+http.listen(process.env.PORT || 3000, function () {
   console.log('http listening');
 })
 
