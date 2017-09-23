@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+
+<style>
+html, body {
+  height: 100%;
+}
+video{
+  margin-right: -4px;
+  height: 400px;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="socket.io-client/dist/socket.io.js"></script>
+<script>
+$(function() {
+var socket = io("http://localhost:3000");
+socket.on('part', function(part){
+  console.log(part);
+  switch (part) {
+    case "headlight":
+      $("#vid_headlight")[0].play();
+      break;
+    case "door":
+      $("#vid_door")[0].play();
+      break;
+    case "trunk":
+      $("#vid_trunk")[0].play();
+      break;
+  };
+});
+});
+
+</script>
+
+</head>
+<body>
+  <video id="vid_headlight">
+      <source src="vid/headlights.mp4" type="video/mp4">
+  </video>
+  <video id="vid_door">
+      <source src="vid/door.mp4" type="video/mp4">
+  </video>
+  <video id="vid_trunk">
+      <source src="vid/trunk.mp4" type="video/mp4">
+  </video>
+</body>
+</html>

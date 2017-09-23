@@ -1,0 +1,19 @@
+{
+  "name": "chatbot-video-control",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Jeff Harris",
+  "license": "LicenseRef-LICENSE",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "socket.io": "^2.0.3"
+  },
+  "engines": {
+    "node": "6.10.2"
+  }
+}
