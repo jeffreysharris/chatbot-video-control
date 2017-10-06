@@ -30,9 +30,8 @@ video{
 
   <script>
     $(function() {
-    var socket = io("http://salty-badlands-97205.herokuapp.com/");
+    var socket = io("https://salty-badlands-97205.herokuapp.com/");
     socket.on('part', function(part){
-      console.log(part);
       switch (part) {
         case "headlight":
           $("#vid_headlight")[0].play();
