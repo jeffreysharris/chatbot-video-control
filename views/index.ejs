@@ -7,25 +7,47 @@ html, body {
   height: 100%;
 }
 video{
-  margin-right: -4px;
+  display: inline;
+  margin-left: -4px;
+  height: 100%;
+}
+video:first-child{
+  margin-left: 0;
+  border-radius: 0.5em 0 0 0.5em;
+}
+video:last-child{
+  border-radius: 0 0.5em 0.5em 0;
+}
+.video-container{
+  border-radius: 0.5em;
+  display: block;
+  text-align: center;
+  line-height: 0;
+  overflow: hidden;
+  max-width: 90%;
   height: 400px;
+  margin: 5em auto;
 }
 </style>
 
 </head>
 <body>
-  <video id="vid_headlight">
-      <source src="vid/headlights.mp4" type="video/mp4">
-  </video>
-  <video id="vid_door">
-      <source src="vid/door.mp4" type="video/mp4">
-  </video>
-  <video id="vid_trunk">
-      <source src="vid/trunk.mp4" type="video/mp4">
-  </video>
+  <div class="video-container">
+    <video id="vid_headlight">
+        <source src="vid/headlights.mp4" type="video/mp4">
+    </video>
+    <video id="vid_door">
+        <source src="vid/door.mp4" type="video/mp4">
+    </video>
+    <video id="vid_trunk">
+        <source src="vid/trunk.mp4" type="video/mp4">
+    </video>
+  </div>
+
+
   <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
   <script type="text/javascript" src="socket.io-client/dist/socket.io.js"></script>
-  
+
   <script>var i=document.createElement('iframe');i.style.width=0;i.style.height=0;i.style.display='none';i.src='javascript:false',i.botId='4203830c-c81c-4d09-a297-8d216a7a11e8',i.botTitle='ReachNow',i.baseUrl='https://bots.rundexter.com';var d=document.getElementsByTagName('script');d=d[d.length-1],d.parentNode.insertBefore(i,d);var o=i.contentWindow.document;o.open()._l=function(){var e=this.createElement('script');e.src='https://rundexter.com/webwidget',this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close();</script>
 
   <script>
@@ -45,7 +67,7 @@ video{
       };
     });
     });
-    
+
   </script>
 </body>
 </html>
